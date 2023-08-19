@@ -39,4 +39,28 @@
             12/12/13
         </td>
     </tr>
+    @for (int i = 0; i < @ViewBag.NamesArray.Length; i++)
+    {
+        <tr>
+            <td>
+                @ViewBag.NamesArray[i]
+            </td>
+        </tr>
+    }
+    @foreach (string name in @ViewBag.NamesArray)
+    {
+        <tr>
+            <td>
+                @name
+            </td>
+        </tr>
+    }
 </table>
+
+<span>
+    <!--viewbag er jinish access korte hoile razor er kahini -->
+    viewbag er jinish access korte hoile razor er kahini <br /> <hr />
+    ViewBag.a => @ViewBag.a + @ViewBag.b = @ViewBag.c <br />
+    ViewData["A"] => @ViewData["A"]
+
+</span>

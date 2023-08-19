@@ -1,0 +1,32 @@
+﻿<!--
+   and View er moddhe upore amake define korte hobe rajor diye
+   je amar ei view ta kon model er shathe ba kon class er shathe bind hoye thakbe
+
+    // so we need to bind specific class with a view
+-->
+<!--// identifier // class identifier  -->
+@model WebApplication1.Models.Student
+@{
+    ViewBag.Title = "List";
+}
+
+<!-- Action and view er name same rakhte hobe -->
+<h2>List</h2>
+
+<!-- Access korar system -->
+<h4> @Model.Name</h4><h4> @Model.Id</h4>
+<h4> @Model.Dob</h4>
+
+<h3> @ViewBag.Name </h3>
+
+<table class="table table-bordered">
+
+    @foreach (string name in @ViewBag.Names)
+    {
+        <tr>
+            <td>
+                @name
+            </td>
+        </tr>
+    }
+</table>

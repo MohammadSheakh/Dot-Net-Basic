@@ -1,0 +1,39 @@
+﻿<!--
+    ei view ta ke kon class er shathe bind korbo ?
+    ekhon kintu amra list of student niye kaj kortesi ..
+    student single instance/object  niye kintu kaj kortesi na .. tai age student class er shathe
+    bind korsilam
+
+    ekhane to student instance/object pass kora hoy nai ... list pass kora hoyeche
+
+-->
+<!-- built in class er jonno namespace add kora lage na  
+     kisher list shetao bole dite hobe 
+
+    so, ei view ta bind hoise list of student er jonno 
+    -->
+@model List<WebApplication1.Models.Student>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<!-- Model tai amar List .. So, ami loop chalabo Model er upor -->
+<table class="table">
+    <tr>
+        <th> Name </th>
+        <th> Id </th>
+        <th> DOB </th>
+    </tr>
+
+    @foreach (var student in @Model)
+    {
+        // view kintu bind hoye gese
+        <tr>
+            <td> @student.Name</td>
+            <td> @student.Id</td>
+            <td> @student.Dob</td>
+        </tr>
+    }
+</table>
