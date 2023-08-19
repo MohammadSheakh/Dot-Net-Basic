@@ -31,7 +31,7 @@ namespace WebApplication1.Controllers
             Student student = new Student() // amra evabeo object create korte pari 
             {
                 Name = "Mohammad Sheakh",
-                Id = 1,
+                Id = "id bro",
                 Dob = "434"
             }; // instance create korlam 
             // ekhon amra viewbag er moddhe value pass na kore compact way tei object ta ke pass korbo 
@@ -47,23 +47,78 @@ namespace WebApplication1.Controllers
 
 
         /////////////////////////////////////////////////////////////////////////////////////////
-        
+
         public ActionResult List()
         {
             // amra list of student nibo .. sheta view te pathabo 
             List<Student> students = new List<Student>();
             // for loop use kore list er moddhe value assign korbo 
-            for (int i = 0; i< 10; i++) 
+            for (int i = 0; i < 10; i++)
             {
-                Student student = new Student() 
+                Student student = new Student()
                 {
-                    Name = "Mohammad Sheakh" + ( i + 1 ),
-                    Id = 1,
+                    Name = "Mohammad Sheakh" + (i + 1),
+                    Id = "id bro",
                     Dob = "434"
                 };
                 students.Add(student); // prottek bar create hoye add hoye jabe 
             }
             return View(students);
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////////
+
+        public ActionResult Create()
+        {
+            // ekhon amra view theke data niye ekta user create korbo 
+
+            return View();
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////////
+
+        //public ActionResult CreateSubmit()
+        // 1st way requst
+
+        //public ActionResult CreateSubmit(FormCollection fc)
+        // 2nd way mvc framework er ekta class ei class er instance parameter e nibo 
+
+        public ActionResult CreateSubmit(string Name, string Id, string Dob)
+        // 3rd way From Direct Variable  // int? -> this is nullable integer
+        {
+            //  Submit houwa Data gula amra ei page e dekhabo 
+
+            Student student = new Student();
+            // student er value gula ke ami user jegula dibe .. shegula diye populate korbo 
+
+            // form theke value receive korte pari 4 ta way te
+            // 1. from HttpRequstBase -> ei class theke -> er instance hocche Request // dictionary
+
+            /*
+             *  // ei ta ekta approach 
+                student.Name= Request["Name"];
+                student.Id = Request["Id"];
+                student.Dob = Request["Dob"];
+
+             */
+
+            // 2. next approach .. Form Collection Object 
+            // ekhan theke receive er system hocche .. Dictionary 
+            /*
+            student.Name = fc["Name"];
+            student.Id = fc["Id"];
+            student.Dob = fc["Dob"];
+            */
+
+            // 3. From Direct Variable 
+
+            /*
+            student.Name = Name;
+            student.Id = Id;
+            student.Dob = Dob;
+            */
+
+            return View(student);
         }
     }
 }

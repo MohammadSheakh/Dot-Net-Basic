@@ -8,7 +8,7 @@ namespace WebApplication1.Models
     public class Student
     {
         public string Name { get; set; } // property 
-        public int Id { get; set; } // property 2 type -> auto property , full property 
+        public string Id { get; set; } // property 2 type -> auto property , full property 
         // auto property example 
         public string Dob { get; set; }
 
