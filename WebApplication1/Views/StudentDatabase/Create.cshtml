@@ -1,0 +1,32 @@
+﻿@model WebApplication1.Models.Entity.StudentDBE
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<form action="/StudentDatabase/Create" method="post">
+    <!--
+        // id will generate automatically
+        <h4>Id</h4>
+        <input type="text" name="Id" value="" class="form-control" />
+        Model.Name
+    -->
+
+    <h4>Name</h4>
+    <input type="text" name="Name" class="form-control" />
+    @Html.ValidationMessageFor(m=>m.Name, "Initial Message", new {@class= "text-danger"})
+
+    <h4>DOB</h4>
+    <input type="date" name="Dob" class="form-control" />
+
+    <h4>Gender</h4>
+    <input type="radio" name="Gender" value="Male">Male
+    <input type="radio" name="Gender" value="Female">Female
+
+    <h4>Cgpa</h4>
+    <input type="text" name="Cgpa" class="form-control" />
+
+    <input type="submit" value="Add" class="btn btn-primary" />
+</form>
+

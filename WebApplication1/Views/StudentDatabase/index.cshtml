@@ -1,0 +1,35 @@
+﻿<!--
+    Controller theke ei view te List jehetu pass kortesi ..
+    List ta jei Model er chilo .. Shei Model ta ei view te Bind 
+    korte hobe .. 
+
+-->
+@model List<WebApplication1.Models.Entity.StudentDBE>
+@{
+    ViewBag.Title = "index";
+}
+
+<h2>index</h2>
+
+
+<table class="table">
+    <tr>
+        <th> Id </th>
+        <th> Name </th>
+        <th> Dob </th>
+        <th> Gender </th>
+        <th> Cgpa </th>
+    </tr>
+
+    @foreach (var student in @Model)
+    {
+        // view kintu bind hoye gese
+        <tr>
+            <td> @student.Id</td>
+            <td> @student.Name</td>
+            <td> @student.Dob</td>
+            <td> @student.Gender</td>
+            <td> @student.Cgpa</td>
+        </tr>
+    }
+</table>

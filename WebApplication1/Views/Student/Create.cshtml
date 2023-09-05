@@ -1,4 +1,4 @@
-﻿
+﻿@model WebApplication1.Models.Student
 @{
     ViewBag.Title = "Create";
 }
@@ -9,10 +9,11 @@
     ekta form thakbe .. shekhan e user er data post kore create kora jabe     
     destination hishebe route ta diye dibo 
 -->
-<form action="/Student/CreateSubmit" method="post">
+<form action="/StudentDatabase/Create" method="post">
     <h4>Name</h4>
     <input type="text" name="Name" value="" class="form-control" />
-    <h4>Id</h4>
+    @Html.ValidationMessageFor(m => m.Name, "", new {@class="text-danger"})
+    <h4>Id</h4> 
     <input type="text" name="Id" value="" class="form-control" />
     <h4>DOB</h4>
     <input type="text" name="Dob" value="" class="form-control" />

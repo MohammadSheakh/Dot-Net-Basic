@@ -83,12 +83,15 @@ namespace WebApplication1.Controllers
         //public ActionResult CreateSubmit(FormCollection fc)
         // 2nd way mvc framework er ekta class ei class er instance parameter e nibo 
 
-        public ActionResult CreateSubmit(string Name, string Id, string Dob)
+        //public ActionResult CreateSubmit(string Name, string Id, string Dob)
         // 3rd way From Direct Variable  // int? -> this is nullable integer
+
+        public ActionResult CreateSubmit(Student s) // constructor call houar shomoy property er default value initialize hoye jay 
+        // 4th way 
         {
             //  Submit houwa Data gula amra ei page e dekhabo 
 
-            Student student = new Student();
+            Student student = new Student();  // 4th way te ei object create kora lagbe na 
             // student er value gula ke ami user jegula dibe .. shegula diye populate korbo 
 
             // form theke value receive korte pari 4 ta way te
@@ -118,7 +121,10 @@ namespace WebApplication1.Controllers
             student.Dob = Dob;
             */
 
-            return View(student);
+            // 4. fourth way
+            return View(s);  // this is for 4th way 
+
+            //return View(student); // for 1st, 2nd and 3rd way 
         }
     }
 }
