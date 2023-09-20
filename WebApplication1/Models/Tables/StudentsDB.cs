@@ -42,7 +42,7 @@ namespace WebApplication1.Models.Tables
         {
             // code gula amra StudentDatabaseController er Index method [GET] theke niye ashsi 
 
-            string connString = "Server=CHILL-PC\\SQLEXPRESS;Database=UMS;Integrated Security=true;";
+            string connString = "Server=CHILLPC\\SQLEXPRESS;Database=UMS;Integrated Security=true;";
             SqlConnection conn = new SqlConnection(connString);
 
             // ekhan theke start 

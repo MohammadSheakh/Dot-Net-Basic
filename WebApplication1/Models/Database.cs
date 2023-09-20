@@ -17,7 +17,7 @@ namespace WebApplication1.Models
 
         public Database() {
             // Connection String 
-            string connString = "Server=CHILL-PC\\SQLEXPRESS;Database=UMS;Integrated Security=true;";
+            string connString = "Server=CHILLPC\\SQLEXPRESS;Database=UMS;Integrated Security=true;";
             SqlConnection conn = new SqlConnection(connString);
             
             StudentsDB = new StudentsDB(conn); // bujhlam na 😥

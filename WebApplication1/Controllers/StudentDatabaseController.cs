@@ -92,23 +92,23 @@ namespace WebApplication1.Controllers
 
             // Validation niye kaj kortesi ekhane 
             
-            if (ModelState.IsValid){
+            ///if (ModelState.IsValid){
 
-                Database db = new Database();
-                db.StudentsDB.Add(sdb);
-                return RedirectToAction("Index"); // Index page e redirect korbe 
+            ///    Database db = new Database();
+            ///    db.StudentsDB.Add(sdb);
+            ///    return RedirectToAction("Index"); // Index page e redirect korbe 
 
-            }
-            return View(); // etar mane hocche Create page e show korbe .. 
+            ///}
+            ///return View(); // etar mane hocche Create page e show korbe .. 
 
-            ///Database db = new Database();
-            ///db.StudentsDB.Add(sdb);
+            Database db = new Database();
+            db.StudentsDB.Add(sdb);
             //var students = db.StudentsDB.GetAll();
 
 
 
             //return View();
-            ///return RedirectToAction("Index"); // bujhlam na 😥
+            return RedirectToAction("Index"); // bujhlam na 😥
         }
     }
 }

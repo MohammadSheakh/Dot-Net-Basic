@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+@ViewBag.Names[0]
+@ViewBag.Names[1]
+
+@for (int i = 0; i < ViewBag.names.Length; i++)
+{
+    @ViewBag.names[i]
+}
+
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+
+    <p>Use this area to provide additional information.</p>
+</main>
